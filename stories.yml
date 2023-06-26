@@ -1,0 +1,69 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+# This travel booking path tells us the story of our chatbot. Basically, as per the user's requirements, what would be the chatbot's action,
+# that is what is mentioned in the stories.yml file
+
+- story: travel booking path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: travel_booking
+  - action: utter_travel_booking
+  - intent: flight_booking
+  - action: utter_flight_booking
+  - action: utter_anything_else
+  - intent: hotel_booking
+  - action: utter_hotel_booking
+  - action: utter_anything_else
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: flight booking path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: flight_booking
+  - action: utter_flight_booking
+  - action: utter_anything_else
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: hotel booking path
+  steps:  
+  - intent: greet
+  - action: utter_greet
+  - intent: hotel_booking
+  - action: utter_hotel_booking
+  - action: utter_anything_else
+  - intent: goodbye
+  - action: utter_goodbye

@@ -1,0 +1,63 @@
+version: "3.1"
+
+# We add intents, actions, entities, responses, etc that we have created, in the domain.yml file. 
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - travel_booking     
+  - flight_booking
+  - hotel_booking
+
+# These are the actions for travel agency
+actions:
+  - action_travel_booking
+  - action_flight_booking
+  - action_hotel_booking
+
+entities:
+  - city
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Happy to know that!"
+
+  utter_goodbye:
+  - text: "Happy to help you. hope to see you again"
+
+# New utter_anything_else response is created, so that if the user needs any other help, according actions can be taken.
+  utter_anything_else:
+  - text: "Do you need any other assistance?"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+# Below are the travel agency responses.
+  utter_travel_booking:
+  - text: "Welcome to our travel agency! How may I help you?"
+
+  utter_flight_booking:
+  - text: "Here is the link to book your flight tickets.\nhttps://www.easemytrip.com/"
+  
+  utter_hotel_booking:
+  - text: "Please click on the link for hotel booking.\nhttps://www.agoda.com/"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

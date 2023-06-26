@@ -1,0 +1,114 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - bye
+    - thank you
+    - cee you
+    - c u
+    - hope to see you soon
+    - goodbye
+    - bye bye
+    - see you later
+    - thanks
+  
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+# various intents created, that were required for travel agency chatbot.
+# Like travel_booking, flight_booking, hotel_booking. By these intent we can understand what does user wants to convey.
+# We train our chatbot based on these examples
+
+- intent: travel_booking
+  examples: |
+    - book tickets 
+    - flights booking
+    - book flights for me
+
+- intent: flight_booking
+  examples: | 
+    - flights from [kolkata](city) to [mumbai](city)
+    - flights from [Bengaluru](city) to Port Blair(city)
+    - book flights from [Mumbai](city) to [Hyderabad](city)
+    - book flights from [Bengaluru](city) to [Port Blair](city)
+
+- intent: hotel_booking
+  examples: |
+    - book hotels
+    - I'm looking for hotels 
+    - hotel booking in [Port Blair](city)
